@@ -3,8 +3,8 @@
 
 #include "VaRestEditorPluginPrivatePCH.h"
 #include "VaRest_BreakJson.h"
-#include "Runtime/Launch/Resources/Version.h"
 
+#include "Runtime/Launch/Resources/Version.h"
 
 #define LOCTEXT_NAMESPACE "VaRest_BreakJson"
 
@@ -57,7 +57,7 @@ public:
 
 				FBPTerminal* FieldNameTerm = Context.CreateLocalTerminal(ETerminalSpecification::TS_Literal);
 				FieldNameTerm->Type.PinCategory = CompilerContext.GetSchema()->PC_String;
-#if ENGINE_MAJOR_VERSION > 4 || ENGINE_MINOR_VERSION >= 13
+#if ENGINE_MINOR_VERSION >= 13
 				FieldNameTerm->SourcePin = Pin;
 #else				
 				FieldNameTerm->Source = Pin;
